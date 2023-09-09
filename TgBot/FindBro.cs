@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace TgBot
 {
-    internal class FindBro
+    internal class Login
     {
-        static public long Find_SB()
-        {
-            return 0;
-        }
+
     }
 }
