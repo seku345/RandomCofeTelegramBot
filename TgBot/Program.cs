@@ -139,7 +139,7 @@ namespace TelegramBotExperiments
                         case "календарь встреч":
                             await botClient.SendTextMessageAsync(
                                 message.Chat.Id,
-                                "В разработке(вечной)..!",
+                                "В разработке..!",
                                 replyMarkup: new ReplyKeyboardRemove()
                             );
                             //calendar
@@ -171,10 +171,6 @@ namespace TelegramBotExperiments
                                     new[]
                                     {
                                     InlineKeyboardButton.WithCallbackData(
-                                        text: "Покинуть поиск",
-                                        callbackData: "LeaveQueue"
-                                    ),
-                                    InlineKeyboardButton.WithCallbackData(
                                         text: "Изменить данные",
                                         callbackData: "ChangeData"
                                     ),
@@ -184,7 +180,36 @@ namespace TelegramBotExperiments
                             //...
                             break;
                         case "сообщить об ошибке":
-                            //Report handler
+                            await botClient.SendTextMessageAsync(
+                                message.Chat.Id,
+                                "Напишите @prunovxd насчёт ошибки.",
+                                replyMarkup: new ReplyKeyboardMarkup(
+                                    new[]
+                                    {
+                                    new KeyboardButton[] {"Найти компанию по кофейку", "Календарь встреч" },
+                                    new KeyboardButton[] {"Профиль","Настройки и помощь" },
+                                    }
+                                )
+                                {
+                                    ResizeKeyboard = true
+                                }
+                            );
+                            break;
+                        case "основное меню":
+                            await botClient.SendTextMessageAsync(
+                                message.Chat.Id,
+                                "Открываем...",
+                                replyMarkup: new ReplyKeyboardMarkup(
+                                    new[]
+                                    {
+                                    new KeyboardButton[] {"Найти компанию по кофейку", "Календарь встреч" },
+                                    new KeyboardButton[] {"Профиль","Настройки и помощь" },
+                                    }
+                                )
+                                {
+                                    ResizeKeyboard = true
+                                }
+                            );
                             break;
                         case "о боте":
                             /*await botClient.SendTextMessageAsync(
@@ -248,7 +273,7 @@ namespace TelegramBotExperiments
                                 replyMarkup: new ReplyKeyboardMarkup(
                                     new[]
                                     {
-                                    new KeyboardButton[] {"Переключить язык", "Сообщить об ошибке" },
+                                    new KeyboardButton[] { "Основное меню", "Сообщить об ошибке"},
                                     new KeyboardButton[] {"О боте","Удалить аккаунт"},
                                     }
                                 )
@@ -355,10 +380,6 @@ namespace TelegramBotExperiments
                                     new[]
                                     {
                                     InlineKeyboardButton.WithCallbackData(
-                                        text: "Покинуть поиск",
-                                        callbackData: "LeaveQueue"
-                                    ),
-                                    InlineKeyboardButton.WithCallbackData(
                                         text: "Изменить данные",
                                         callbackData: "ChangeData"
                                     ),
@@ -377,10 +398,6 @@ namespace TelegramBotExperiments
                                     new[]
                                     {
                                     InlineKeyboardButton.WithCallbackData(
-                                        text: "Покинуть поиск",
-                                        callbackData: "LeaveQueue"
-                                    ),
-                                    InlineKeyboardButton.WithCallbackData(
                                         text: "Изменить данные",
                                         callbackData: "ChangeData"
                                     ),
@@ -397,10 +414,6 @@ namespace TelegramBotExperiments
                                 replyMarkup: new InlineKeyboardMarkup(
                                     new[]
                                     {
-                                    InlineKeyboardButton.WithCallbackData(
-                                        text: "Покинуть поиск",
-                                        callbackData: "LeaveQueue"
-                                    ),
                                     InlineKeyboardButton.WithCallbackData(
                                         text: "Изменить данные",
                                         callbackData: "ChangeData"
@@ -420,10 +433,6 @@ namespace TelegramBotExperiments
                                     new[]
                                     {
                                     InlineKeyboardButton.WithCallbackData(
-                                        text: "Покинуть поиск",
-                                        callbackData: "LeaveQueue"
-                                    ),
-                                    InlineKeyboardButton.WithCallbackData(
                                         text: "Изменить данные",
                                         callbackData: "ChangeData"
                                     ),
@@ -441,10 +450,6 @@ namespace TelegramBotExperiments
                                 replyMarkup: new InlineKeyboardMarkup(
                                     new[]
                                     {
-                                    InlineKeyboardButton.WithCallbackData(
-                                        text: "Покинуть поиск",
-                                        callbackData: "LeaveQueue"
-                                    ),
                                     InlineKeyboardButton.WithCallbackData(
                                         text: "Изменить данные",
                                         callbackData: "ChangeData"
